@@ -88,7 +88,7 @@ else:
     macros = [("__LITTLE_ENDIAN__", "1")]
 
 ext_modules = []
-if not PYPY and not PY2:
+if True:
     ext_modules.append(
         Extension(
             "msgpack._cmsgpack",
