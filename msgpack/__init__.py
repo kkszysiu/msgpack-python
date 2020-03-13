@@ -8,14 +8,6 @@ import sys
 
 from ._cmsgpack import Packer, unpackb, Unpacker
 
-if os.environ.get("MSGPACK_PUREPYTHON"):
-    from .fallback import Packer, unpackb, Unpacker
-else:
-    try:
-        from ._cmsgpack import Packer, unpackb, Unpacker
-    except ImportError:
-        from .fallback import Packer, unpackb, Unpacker
-
 def pack(o, stream, **kwargs):
     """
     Pack object `o` and write it to `stream`
